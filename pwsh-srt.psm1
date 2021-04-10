@@ -88,4 +88,8 @@ function ConvertTo-Srt {
     }
 }
 
-Get-Content '.\content\Hamburger Hill (1987).en.srt' | ConvertFrom-Srt | Add-SrtTimeDifference -Seconds 30 | ConvertTo-Srt 
+Export-ModuleMember -Function ConvertFrom-Srt
+Export-ModuleMember -Function ConvertTo-Srt
+Export-ModuleMember -Function Add-SrtTimeDifference
+
+#(Get-Content '.\content\Hamburger Hill (1987).en.srt' | ConvertFrom-Srt | Select-Object -Skip 1 | Add-SrtTimeDifference -Seconds 14 | ConvertTo-Srt) | Out-File -Encoding UTF8  '.\Hamburger Hill (1987).en.srt'
