@@ -33,6 +33,7 @@ Sometimes the first few entries in a subtitle file contains ads or other informa
 PS> Get-Content -Path 'Pretty Woman (1990).en.srt' | 
     ConvertFrom-Srt | 
     Select-Object -Skip 1 | 
+    ConvertTo-Srt |
     Out-File -Path 'Pretty Woman (1990).en.no-ads.srt'
 ```
 
